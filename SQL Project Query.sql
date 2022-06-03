@@ -16,7 +16,7 @@ GROUP BY EXTRACT(YEAR from order_date), category
 ORDER BY year, total_sales DESC
 
 -- Using CTE, list top 3 customers in each segment in each country by sales and assess their order priority
--- person in charge of each country should have the knowledge of their large customers, can be expanded to top 10 customers
+-- person in charge of each country should have the knowledge of their large customers, can be expanded to top 20 customers
 
 WITH top_three AS(
 	SELECT 
@@ -56,7 +56,7 @@ GROUP BY
 
 -- assume that the 'low order priority' in this dataset means that given everything else is the same, this order has a lower priority
 -- these are largest customers hence important to secure their loyalty
--- this can be a performance metrics 
+-- this can be a performance metric
 -- result shows that out of 1108 important orders, 49 orders are given low priority
 -- low priority sales as a % of important sales is 3.32%
 
@@ -170,7 +170,7 @@ INNER JOIN orders
 ON returns.order_id = orders.order_id 
 AND returns.market = orders.market
 
--- identify the products with highest return by sales
+-- identify the products with highest returns by sales
 -- the product with highest return by sales is the Canon imageCLASS 2200 copier, of which all relate to consumer segment
 -- £14k of £32.9k of the Canon 2200 sales to consumer sector is return (42.5% of sales returned)
 -- investigation required on the reason of returns
@@ -200,11 +200,11 @@ GROUP BY
 	product_name
 ORDER BY SUM(sales) DESC
 
--- highest number of return by quantity
--- results show that the highest number of return by quantity is Stanley Canvas water colour - 15 returns, the reason can be investigated.
--- however the profit and sales are relatively small at £268 and £710 each
+-- highest number of returns by quantity
+-- results show that the highest number of returns by quantity is Stanley Canvas water colour - 15 returns
+-- however the profit and sales are relatively small at £268 and £710 respectively
 -- the product which pops up with high number with returns and has high profit and sales is Red Hoover Stove - 14 returns
--- Red Hoover Stove also appears as the second products with highest return by sales in the table above
+-- Red Hoover Stove also appears as the second product with highest return by sales in the table above
 -- the profit and sales are £3979 and £7959 respectively, need to be investigated.
 
 SELECT 
