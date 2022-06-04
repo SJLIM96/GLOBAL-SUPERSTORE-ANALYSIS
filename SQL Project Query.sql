@@ -1,4 +1,5 @@
 -- Global superstore sales analysis
+-- The results are used in data visualiation in Tableau: https://public.tableau.com/app/profile/shu.juin.lim/viz/GlobalSupersotreSalesAnalysis/GlobalSuperstoreSalesAnalysis?publish=yes
 
 -- Assume functional currency of GBP 
 -- Quick overview of the global sales and profit
